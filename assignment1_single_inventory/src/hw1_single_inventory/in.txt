@@ -1,24 +1,7 @@
-LOAD src/hw1_single_inventory/test.csv
-STORE stored.csv
-CLEAR
-STORE stored.csv
 ADD Intel 11/1/2011
-ADD "Ryzen test" Intel 11/1/2011
-ADD "Ryzen test" Intel 11/1/2011
-ADD i7-7700HQ Intel 11/1/2018
-STORE stored.csv
 STATUS 5 10 15
 BUY "Table Lamp" 2
-BUY "Ryzen test" Intel 25
-BUY "Ryzen test" Intel -25
-BUY "Ryzen test" Intel 15
-SELL "Ryzen test" Intel 15
-SELL "Ryzen test" Intel 1000
-SELL "Ryzen test" Intel -25
-SELL NOTHING
 ADD "Ryzen 7 2700X" AMD 05/06/2018
-BUY i7-7700HQ Intel 25
-SELL i7-7700HQ Intel 25
 ADD "Ryzen 7 2700" AMD 05/06/2018
 ADD "Ryzen 7 2700" AMD 05/06/2018
 ADD "Ryzen 5 2600X" AMD 05/04/2018
@@ -26,10 +9,19 @@ ADD "Ryzen 5 2400G" AMD 05/04/2018
 ADD i7-8700K "Intel Corp" 05/02/2017
 ADD i5-8600K "Intel Corp" 05/02/2017
 ADD i3-8350K "Intel Corp" 05/02/2017
-QUAN FEWER -1
-QUAN GREATER 1
-QUAN GREATER -1
 STATUS
-CLEAR
-BUY "Ryzen test" Intel 25
+BUY "Ryzen 5 2600X" AMD -44
+BUY "Ryzen 5 2600X" AMD 05/02/2017
+BUY "Ryzen 5 2600X" AMD 55
+BUY "Ryzen 5 2600X" AMD 22
+SELL "Ryzen 5 2600X" AMD 22
+SELL "Ryzen 5 2600X" AMD 56
+SELL "Ryzen 5 2600X" "AMD" 55
+BUY i7-8700K "Intel Corp" 12
+BUY i5-8600K "Intel Corp" 17
+BUY i3-8350K "Intel Corp" 24
 STATUS
+QUAN GREATER 5
+QUAN FEWER 15
+QUAN BETWEEN 10 18
+STORE out.csv

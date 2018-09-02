@@ -13,6 +13,7 @@ import hw1_single_inventory.commands.CommandLoad;
 import hw1_single_inventory.commands.CommandQuanBetween;
 import hw1_single_inventory.commands.CommandQuanFewer;
 import hw1_single_inventory.commands.CommandQuanGreater;
+import hw1_single_inventory.commands.CommandSearch;
 import hw1_single_inventory.commands.CommandSell;
 import hw1_single_inventory.commands.CommandStatus;
 import hw1_single_inventory.commands.CommandStore;
@@ -131,6 +132,16 @@ public class CommandFactory {
 	public Command getQuanBetweenErrorCommand(ErrorStates error)
 	{
 		return new CommandQuanBetween(error, m_outStrings);
+	}
+	
+	public Command getSearchOkCommand(String needle)
+	{
+		return new CommandSearch(m_database, m_outStrings, needle);
+	}
+	
+	public Command getSearchErrorCommand(ErrorStates error)
+	{
+		return new CommandSearch(error, m_outStrings);
 	}
 	
 }

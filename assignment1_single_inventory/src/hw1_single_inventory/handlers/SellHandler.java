@@ -35,7 +35,7 @@ public class SellHandler extends LineHandler{
 					}
 				}
 				catch (NumberFormatException e) {
-					Command sellCommand = m_commandFactory.getSellErrorCommand(ErrorStates.INVALID_ARGUMENT);
+					Command sellCommand = m_commandFactory.getSellErrorCommand(ErrorStates.INVALID_QUANTITY);
 					m_commandList.add(sellCommand);
 				}
 			}

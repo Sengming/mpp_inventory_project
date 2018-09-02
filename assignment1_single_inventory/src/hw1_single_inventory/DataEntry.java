@@ -15,6 +15,8 @@ public class DataEntry {
 	
 	// Overload Ctor
 	public DataEntry(String name, String company, Date date, int quantity) {
+		m_name = new String();
+		m_company = new String();
 		setName(name);
 		setCompany(company);
 		m_date = date;

@@ -35,7 +35,7 @@ public class BuyHandler extends LineHandler {
 					}
 				}
 				catch (NumberFormatException e) {
-					Command buyCommand = m_commandFactory.getBuyErrorCommand(ErrorStates.INVALID_ARGUMENT);
+					Command buyCommand = m_commandFactory.getBuyErrorCommand(ErrorStates.INVALID_QUANTITY);
 					m_commandList.add(buyCommand);
 				}
 			}
