@@ -49,9 +49,9 @@ public class CommandFactory {
 		return new CommandStore(error, m_outStrings);
 	}
 	
-	public Command getUnhandledCommand(ErrorStates error)
+	public Command getUnhandledCommand(ErrorStates error, String parseString)
 	{
-		return new CommandUnhandledError(error, m_outStrings);
+		return new CommandUnhandledError(error, m_outStrings, parseString);
 	}
 	
 	public Command getClearOkCommand()

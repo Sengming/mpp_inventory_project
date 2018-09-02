@@ -25,6 +25,7 @@ public class AddHandler extends LineHandler {
 			{
 				try {
 					SimpleDateFormat formatParser = new SimpleDateFormat("MM/dd/yyyy");
+					formatParser.setLenient(false);
 					Date date = new Date();
 					date = formatParser.parse(arguments.get(3));
 					Command addCommand = m_commandFactory.getAddOkCommand(arguments.get(1), arguments.get(2), date);

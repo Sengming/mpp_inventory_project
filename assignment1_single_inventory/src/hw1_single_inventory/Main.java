@@ -25,8 +25,8 @@ public class Main {
 		ArrayList<DataEntry> database = new ArrayList<DataEntry>();
 		ArrayList<String> outStrings = new ArrayList<String>();
 		
-		File inputFile = new File("src/hw1_single_inventory/in.txt");
-		File outputFile = new File("src/hw1_single_inventory/out.txt");
+		File inputFile = new File("in.txt");
+		File outputFile = new File("out.txt");
 		
 		CommandFactory commandFactory = new CommandFactory(database, outStrings);
 		LineHandlerFactory lineFactory = new LineHandlerFactory(commandList, commandFactory);
