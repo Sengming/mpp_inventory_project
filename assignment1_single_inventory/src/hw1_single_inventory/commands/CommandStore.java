@@ -38,9 +38,12 @@ public class CommandStore extends Command {
 				m_outputCsvFile.createNewFile();
 				FileWriter m_fileWriter = new FileWriter(m_outputCsvFile);
 				SimpleDateFormat dateformatter = new SimpleDateFormat("MM/dd/yyyy");
+				int numberOfEntries=0;
 				for (DataEntry entry : m_database) {
 					m_fileWriter.write(entry.getName()+","+entry.getCompany()+","+dateformatter.format(entry.getDate())+","+entry.getQuantity()+"\n");
+					++numberOfEntries;
 				}
+				m_outputStrings.add(s_commandName+": OK " + numberOfEntries + "\n");
 				m_fileWriter.close();
 				
 			} catch (IOException e) {

@@ -23,7 +23,7 @@ public class StoreHandler extends LineHandler {
 				String regex = "^.*\\.(csv)$";
 				if (arguments.get(1).matches(regex))
 				{
-					// Passes CSV url to the load command after passing checks and ship it
+					// Passes CSV url to the store command after passing checks and ship it
 					Command storeCommand = m_commandFactory.getStoreOkCommand(arguments.get(1));
 					m_commandList.add(storeCommand);
 				}
