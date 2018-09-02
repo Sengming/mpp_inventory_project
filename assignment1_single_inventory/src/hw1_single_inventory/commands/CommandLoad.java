@@ -37,13 +37,15 @@ public class CommandLoad extends Command {
 			// Read lines from csv file into database
 			try 
 			{
+				// First, clear db of existing entries
+				m_database.clear();
+
 				BufferedReader reader = new BufferedReader(new FileReader(m_csvUrl));
 				String line = reader.readLine();
 				int numberOfEntries = 0;
 				while (line != null)
 				{
-					String[] csvData = line.split(",");
-					checkLineAndUpdateDb(csvData);
+					checkLineAndUpdateDb(line);
 					++numberOfEntries;
 					line = reader.readLine();
 				}
@@ -69,13 +71,12 @@ public class CommandLoad extends Command {
 	}
 	
 	// Helper function
-	private void checkLineAndUpdateDb(String[] splitline)
+	private void checkLineAndUpdateDb(String line)
 	{
-		// First, clear db of existing entries
-		m_database.clear();
-
-		if (splitline.length == 3)
+		String[] splitline = line.split(",");
+		if (splitline.length == 4)
 		{
+			// Populate entry
 			DataEntry entry = new DataEntry();
 			entry.setName(splitline[0]);
 			entry.setCompany(splitline[1]);
@@ -84,6 +85,9 @@ public class CommandLoad extends Command {
 				postErrorState(s_commandName, ErrorStates.INVALID_DATE);
 			}
 			entry.setQuantity(Integer.parseInt(splitline[3]));
+			
+			// Append entry to database
+			m_database.add(entry);
 		}
 		else
 		{

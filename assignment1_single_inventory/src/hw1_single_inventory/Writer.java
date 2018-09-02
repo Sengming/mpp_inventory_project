@@ -15,6 +15,7 @@ public class Writer {
 		m_outputFile = outputFile;
 		m_outStrings = outStrings;
 		try {
+			m_outputFile.createNewFile();
 			m_fileWriter = new FileWriter(m_outputFile);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

@@ -27,6 +27,11 @@ public class DataEntry {
 	// Default Ctor
 	public DataEntry() {
 		// TODO Auto-generated constructor stub
+		m_name = null;
+		m_company = null;
+		m_date = new Date();
+		m_format = new SimpleDateFormat("MM/dd/yyyy");
+		m_format.setLenient(false);
 	}
 
 	public String getName() {

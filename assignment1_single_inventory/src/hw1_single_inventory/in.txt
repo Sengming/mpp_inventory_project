@@ -1,4 +1,5 @@
 LOAD src/hw1_single_inventory/test.csv
+STORE stored.csv
 ADD Intel 11/1/2011
 STATUS 5 10 15
 BUY "Table Lamp" 2
