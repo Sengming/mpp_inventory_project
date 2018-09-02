@@ -10,6 +10,9 @@ import hw1_single_inventory.commands.CommandAdd;
 import hw1_single_inventory.commands.CommandBuy;
 import hw1_single_inventory.commands.CommandClear;
 import hw1_single_inventory.commands.CommandLoad;
+import hw1_single_inventory.commands.CommandQuanBetween;
+import hw1_single_inventory.commands.CommandQuanFewer;
+import hw1_single_inventory.commands.CommandQuanGreater;
 import hw1_single_inventory.commands.CommandSell;
 import hw1_single_inventory.commands.CommandStatus;
 import hw1_single_inventory.commands.CommandStore;
@@ -98,6 +101,36 @@ public class CommandFactory {
 	public Command getSellErrorCommand(ErrorStates error)
 	{
 		return new CommandSell(error, m_outStrings);
+	}
+	
+	public Command getQuanGreaterOkCommand(int comparator)
+	{
+		return new CommandQuanGreater(m_database, m_outStrings, comparator);
+	}
+	
+	public Command getQuanGreaterErrorCommand(ErrorStates error)
+	{
+		return new CommandQuanGreater(error, m_outStrings);
+	}
+	
+	public Command getQuanFewerOkCommand(int comparator)
+	{
+		return new CommandQuanFewer(m_database, m_outStrings, comparator);
+	}
+	
+	public Command getQuanFewerErrorCommand(ErrorStates error)
+	{
+		return new CommandQuanFewer(error, m_outStrings);
+	}
+	
+	public Command getQuanBetweenOkCommand(int low, int high)
+	{
+		return new CommandQuanBetween(m_database, m_outStrings, low, high);
+	}
+	
+	public Command getQuanBetweenErrorCommand(ErrorStates error)
+	{
+		return new CommandQuanBetween(error, m_outStrings);
 	}
 	
 }
