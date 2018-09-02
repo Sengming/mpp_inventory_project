@@ -1,6 +1,11 @@
 LOAD src/hw1_single_inventory/test.csv
 STORE stored.csv
+CLEAR
+STORE stored.csv
 ADD Intel 11/1/2011
+ADD "Ryzen test" Intel 11/1/2011
+ADD "Ryzen test" Intel 11/1/2011
+STORE stored.csv
 STATUS 5 10 15
 BUY "Table Lamp" 2
 ADD "Ryzen 7 2700X" AMD 05/06/2018

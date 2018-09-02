@@ -1,10 +1,13 @@
 package hw1_single_inventory.factories;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import hw1_single_inventory.DataEntry;
 import hw1_single_inventory.ErrorStates;
 import hw1_single_inventory.commands.Command;
+import hw1_single_inventory.commands.CommandAdd;
+import hw1_single_inventory.commands.CommandClear;
 import hw1_single_inventory.commands.CommandLoad;
 import hw1_single_inventory.commands.CommandStore;
 import hw1_single_inventory.commands.CommandUnhandledError;
@@ -42,6 +45,26 @@ public class CommandFactory {
 	public Command getUnhandledCommand(ErrorStates error)
 	{
 		return new CommandUnhandledError(error, m_outStrings);
+	}
+	
+	public Command getClearOkCommand()
+	{
+		return new CommandClear(m_database, m_outStrings);
+	}
+	
+	public Command getClearErrorCommand(ErrorStates error)
+	{
+		return new CommandClear(error, m_outStrings);
+	}
+	
+	public Command getAddOkCommand(String name, String company, Date releaseDate)
+	{
+		return new CommandAdd(m_database, m_outStrings, name, company, releaseDate);
+	}
+	
+	public Command getAddErrorCommand(ErrorStates error)
+	{
+		return new CommandAdd(error, m_outStrings);
 	}
 	
 }

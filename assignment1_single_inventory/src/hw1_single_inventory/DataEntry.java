@@ -38,16 +38,16 @@ public class DataEntry {
 		return m_name;
 	}
 
-	public void setName(String m_name) {
-		this.m_name = m_name;
+	public void setName(String name) {
+		this.m_name = name.replace("\"", "");
 	}
 
 	public String getCompany() {
 		return m_company;
 	}
 
-	public void setCompany(String m_company) {
-		this.m_company = m_company;
+	public void setCompany(String company) {
+		this.m_company = company.replace("\"", "");
 	}
 
 	public Date getDate() {
