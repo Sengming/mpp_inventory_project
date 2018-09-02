@@ -9,6 +9,7 @@ import hw1_single_inventory.commands.Command;
 import hw1_single_inventory.commands.CommandAdd;
 import hw1_single_inventory.commands.CommandClear;
 import hw1_single_inventory.commands.CommandLoad;
+import hw1_single_inventory.commands.CommandStatus;
 import hw1_single_inventory.commands.CommandStore;
 import hw1_single_inventory.commands.CommandUnhandledError;
 
@@ -65,6 +66,16 @@ public class CommandFactory {
 	public Command getAddErrorCommand(ErrorStates error)
 	{
 		return new CommandAdd(error, m_outStrings);
+	}
+	
+	public Command getStatusOkCommand()
+	{
+		return new CommandStatus(m_database, m_outStrings);
+	}
+	
+	public Command getStatusErrorCommand(ErrorStates error)
+	{
+		return new CommandStatus(error, m_outStrings);
 	}
 	
 }
