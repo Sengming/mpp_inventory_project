@@ -1,8 +1,11 @@
-package hw1_single_inventory;
+package hw1_single_inventory.handlers;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import hw1_single_inventory.commands.Command;
+import hw1_single_inventory.factories.CommandFactory;
 
 public abstract class LineHandler {
 

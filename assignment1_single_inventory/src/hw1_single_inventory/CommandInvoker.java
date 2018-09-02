@@ -1,5 +1,7 @@
 package hw1_single_inventory;
 
+import hw1_single_inventory.commands.Command;
+
 public class CommandInvoker {
 
 	Command m_command;
