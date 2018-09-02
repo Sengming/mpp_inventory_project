@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class StatusHandler extends LineHandler {
 
-	public StatusHandler(ArrayList<Command> commandList) {
-		super(commandList);
+	public StatusHandler(ArrayList<Command> commandList, CommandFactory commandFactory) {
+		super(commandList, commandFactory);
 	}
 
 	@Override

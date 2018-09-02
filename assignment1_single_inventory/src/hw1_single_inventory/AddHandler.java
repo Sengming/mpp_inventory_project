@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class AddHandler extends LineHandler {
 
-	public AddHandler(ArrayList<Command> commandList) {
-		super(commandList);
+	public AddHandler(ArrayList<Command> commandList, CommandFactory commandFactory) {
+		super(commandList, commandFactory);
 	}
 
 	@Override

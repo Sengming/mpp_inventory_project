@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class QuanGreaterHandler extends LineHandler{
 
-	public QuanGreaterHandler(ArrayList<Command> commandList) {
-		super(commandList);
+	public QuanGreaterHandler(ArrayList<Command> commandList, CommandFactory commandFactory) {
+		super(commandList, commandFactory);
 	}
 	
 	@Override

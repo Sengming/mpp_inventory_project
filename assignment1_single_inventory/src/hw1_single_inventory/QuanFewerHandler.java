@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class QuanFewerHandler extends LineHandler{
 
-	public QuanFewerHandler(ArrayList<Command> commandList) {
-		super(commandList);
+	public QuanFewerHandler(ArrayList<Command> commandList, CommandFactory commandFactory) {
+		super(commandList, commandFactory);
 	}
 	
 

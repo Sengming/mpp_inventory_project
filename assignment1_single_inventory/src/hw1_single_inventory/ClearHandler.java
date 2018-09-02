@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class ClearHandler extends LineHandler {
 
-	public ClearHandler(ArrayList<Command> commandList) {
-		super(commandList);
+	public ClearHandler(ArrayList<Command> commandList, CommandFactory commandFactory) {
+		super(commandList, commandFactory);
 	}
 	
 

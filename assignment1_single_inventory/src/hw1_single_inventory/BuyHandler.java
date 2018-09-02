@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class BuyHandler extends LineHandler {
 
-	public BuyHandler(ArrayList<Command> commandList) {
-		super(commandList);
+	public BuyHandler(ArrayList<Command> commandList, CommandFactory commandFactory) {
+		super(commandList, commandFactory);
 	}
 
 	@Override

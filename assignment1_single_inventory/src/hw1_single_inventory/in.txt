@@ -1,3 +1,4 @@
+LOAD something.csv
 ADD Intel 11/1/2011
 STATUS 5 10 15
 BUY "Table Lamp" 2

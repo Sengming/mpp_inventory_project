@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class SearchHandler extends LineHandler{
 
-	public SearchHandler(ArrayList<Command> commandList) {
-		super(commandList);
+	public SearchHandler(ArrayList<Command> commandList, CommandFactory commandFactory) {
+		super(commandList, commandFactory);
 	}
 
 	@Override

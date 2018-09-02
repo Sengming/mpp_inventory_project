@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class QuanBetweenHandler extends LineHandler{
 
-	public QuanBetweenHandler(ArrayList<Command> commandList) {
-		super(commandList);
+	public QuanBetweenHandler(ArrayList<Command> commandList, CommandFactory commandFactory) {
+		super(commandList, commandFactory);
 	}
 	
 

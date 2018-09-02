@@ -18,9 +18,14 @@ public class Main {
 	public static void main(String[] args) {
 		
 		ArrayList<Command> commandList = new ArrayList<Command>();
+		ArrayList<DataEntry> database = new ArrayList<DataEntry>();
 		
-		File inputFile = new File("/home/sengming/VT/MPP_5510/eclipse-workspace/assignment1_single_inventory/src/hw1_single_inventory/in.txt");
-		Parser inputParser = new Parser(commandList);
+		File inputFile = new File("src/hw1_single_inventory/in.txt");
+		
+		CommandFactory commandFactory = new CommandFactory(database);
+		LineHandlerFactory lineFactory = new LineHandlerFactory(commandList, commandFactory);
+		
+		Parser inputParser = new Parser(lineFactory);
 		inputParser.parseFile(inputFile);
 		
 		

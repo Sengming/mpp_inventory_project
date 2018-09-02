@@ -1,17 +1,21 @@
 package hw1_single_inventory;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public abstract class LineHandler {
 
 	//Members:
 	private LineHandler m_nextInChain;
 	protected ArrayList<Command> m_commandList;
+	protected CommandFactory m_commandFactory;
 	
-	public LineHandler(ArrayList<Command> commandList)
+	public LineHandler(ArrayList<Command> commandList, CommandFactory commandFactory)
 	{
 		m_nextInChain = null;
 		m_commandList = commandList;
+		m_commandFactory = commandFactory;
 	}
 	
 	public void add(LineHandler next)
@@ -31,4 +35,16 @@ public abstract class LineHandler {
     	}
     }
     
+    protected ArrayList<String> splitStrings(String inputString)
+    {
+        String regex = "\"([^\"]*)\"|(\\S+)";
+        ArrayList<String> splitStrings = new ArrayList<String>();
+        Matcher match = Pattern.compile(regex).matcher(inputString);
+        while (match.find()) 
+        {
+        	splitStrings.add(match.group());
+        }
+        
+        return splitStrings;
+    }
 }

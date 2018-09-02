@@ -9,28 +9,27 @@ import java.util.ArrayList;
 
 
 public class Parser {
-
-	ArrayList<Command> m_commandList;
+	LineHandlerFactory m_lineFactory;
 	
-	public Parser(ArrayList<Command> commandList) {
-		m_commandList = commandList;
+	public Parser(LineHandlerFactory lineFactory) {
+		m_lineFactory = lineFactory;
 	}
 	
 	public void parseFile(File fileToParse)
 	{
 		// Create a chain of responsibility pattern for parsing file, add more if more commands added:
-		LineHandler load = new LoadHandler(m_commandList);
-		LineHandler store = new StoreHandler(m_commandList);
-		LineHandler clear = new ClearHandler(m_commandList);
-		LineHandler add = new AddHandler(m_commandList);
-		LineHandler status = new StatusHandler(m_commandList);
-		LineHandler buy = new BuyHandler(m_commandList);
-		LineHandler sell = new SellHandler(m_commandList);
-		LineHandler quanGreater = new QuanGreaterHandler(m_commandList);
-		LineHandler quanFewer = new QuanFewerHandler(m_commandList);
-		LineHandler quanBetween = new QuanBetweenHandler(m_commandList);
-		LineHandler search = new SearchHandler(m_commandList);
-		LineHandler errorhandler = new LineErrorHandler(m_commandList);
+		LineHandler load = m_lineFactory.getLoadHandler();
+		LineHandler store = m_lineFactory.getStoreHandler();
+		LineHandler clear = m_lineFactory.getClearHandler();
+		LineHandler add = m_lineFactory.getAddHandler();
+		LineHandler status = m_lineFactory.getStatusHandler();
+		LineHandler buy = m_lineFactory.getBuyHandler();
+		LineHandler sell = m_lineFactory.getSellHandler();
+		LineHandler quanGreater = m_lineFactory.getQuanGreaterHandler();
+		LineHandler quanFewer = m_lineFactory.getQuanFewerHandler();
+		LineHandler quanBetween = m_lineFactory.getQuanBetweenHandler();
+		LineHandler search = m_lineFactory.getSearchHandler();
+		LineHandler errorhandler = m_lineFactory.getErrorHandler();
 		
 		load.add(store);
 		store.add(clear);
