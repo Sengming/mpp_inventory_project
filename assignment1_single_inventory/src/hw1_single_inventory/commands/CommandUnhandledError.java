@@ -1,15 +1,20 @@
 package hw1_single_inventory.commands;
 
-public class CommandUnhandledError implements Command {
+import java.util.ArrayList;
 
-	public CommandUnhandledError() {
+import hw1_single_inventory.ErrorStates;
 
+public class CommandUnhandledError extends Command {
+
+	// Error State Constructor
+	public CommandUnhandledError(ErrorStates error, ArrayList<String> outStrings)
+	{
+		super(error, outStrings);
 	}
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
-
+		m_outputStrings.add(m_errorState.toString()+"\n");
 	}
 
 }

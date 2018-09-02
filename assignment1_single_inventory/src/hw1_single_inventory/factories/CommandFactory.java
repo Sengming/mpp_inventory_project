@@ -6,6 +6,7 @@ import hw1_single_inventory.DataEntry;
 import hw1_single_inventory.ErrorStates;
 import hw1_single_inventory.commands.Command;
 import hw1_single_inventory.commands.CommandLoad;
+import hw1_single_inventory.commands.CommandUnhandledError;
 
 public class CommandFactory {
 
@@ -25,6 +26,11 @@ public class CommandFactory {
 	public Command getLoadErrorCommand(ErrorStates error)
 	{
 		return new CommandLoad(error, m_outStrings);
+	}
+	
+	public Command getUnhandledCommand(ErrorStates error)
+	{
+		return new CommandUnhandledError(error, m_outStrings);
 	}
 	
 }
