@@ -85,5 +85,35 @@ public class DataEntry {
 		}
 		return retVal;
 	}
+	
+	public void addToQuantity(int quantity) {
+		if (quantity > 0)
+		{
+			m_quantity += quantity;
+		}
+		else
+		{
+			throw new IllegalArgumentException();
+		}
+	}
+	
+	public void subtractFromQuantity(int quantity)
+	{
+		if (quantity > 0)
+		{
+			if (m_quantity >= quantity)
+			{
+				m_quantity -= quantity;			
+			}
+			else
+			{
+				throw new IllegalArgumentException("CSQMTS");
+			}
+		}
+		else
+		{
+			throw new IllegalArgumentException("IQ");
+		}
+	}
 
 }

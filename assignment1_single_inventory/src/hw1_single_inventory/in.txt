@@ -5,10 +5,20 @@ STORE stored.csv
 ADD Intel 11/1/2011
 ADD "Ryzen test" Intel 11/1/2011
 ADD "Ryzen test" Intel 11/1/2011
+ADD i7-7700HQ Intel 11/1/2018
 STORE stored.csv
 STATUS 5 10 15
 BUY "Table Lamp" 2
+BUY "Ryzen test" Intel 25
+BUY "Ryzen test" Intel -25
+BUY "Ryzen test" Intel 15
+SELL "Ryzen test" Intel 15
+SELL "Ryzen test" Intel 1000
+SELL "Ryzen test" Intel -25
+SELL NOTHING
 ADD "Ryzen 7 2700X" AMD 05/06/2018
+BUY i7-7700HQ Intel 25
+SELL i7-7700HQ Intel 25
 ADD "Ryzen 7 2700" AMD 05/06/2018
 ADD "Ryzen 7 2700" AMD 05/06/2018
 ADD "Ryzen 5 2600X" AMD 05/04/2018
@@ -18,4 +28,5 @@ ADD i5-8600K "Intel Corp" 05/02/2017
 ADD i3-8350K "Intel Corp" 05/02/2017
 STATUS
 CLEAR
+BUY "Ryzen test" Intel 25
 STATUS

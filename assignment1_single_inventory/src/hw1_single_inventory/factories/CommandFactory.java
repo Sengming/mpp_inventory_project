@@ -7,8 +7,10 @@ import hw1_single_inventory.DataEntry;
 import hw1_single_inventory.ErrorStates;
 import hw1_single_inventory.commands.Command;
 import hw1_single_inventory.commands.CommandAdd;
+import hw1_single_inventory.commands.CommandBuy;
 import hw1_single_inventory.commands.CommandClear;
 import hw1_single_inventory.commands.CommandLoad;
+import hw1_single_inventory.commands.CommandSell;
 import hw1_single_inventory.commands.CommandStatus;
 import hw1_single_inventory.commands.CommandStore;
 import hw1_single_inventory.commands.CommandUnhandledError;
@@ -76,6 +78,26 @@ public class CommandFactory {
 	public Command getStatusErrorCommand(ErrorStates error)
 	{
 		return new CommandStatus(error, m_outStrings);
+	}
+	
+	public Command getBuyOkCommand(String name, String company, int quantity)
+	{
+		return new CommandBuy(m_database, m_outStrings, name, company, quantity);
+	}
+	
+	public Command getBuyErrorCommand(ErrorStates error)
+	{
+		return new CommandBuy(error, m_outStrings);
+	}
+	
+	public Command getSellOkCommand(String name, String company, int quantity)
+	{
+		return new CommandSell(m_database, m_outStrings, name, company, quantity);
+	}
+	
+	public Command getSellErrorCommand(ErrorStates error)
+	{
+		return new CommandSell(error, m_outStrings);
 	}
 	
 }
